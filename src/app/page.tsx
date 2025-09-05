@@ -8,15 +8,16 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
       
-      {/* Filter Bar */}
-      <section className="py-6 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-16 z-40">
-        <div className="max-w-7xl mx-auto px-4">
-          <FilterBar />
-        </div>
-      </section>
-
-      {/* Infinite Scroll Image Gallery */}
+      {/* Filter Bar + Image Gallery */}
       <section className="bg-white dark:bg-gray-900">
+        {/* Filter Bar - Sticky */}
+        <div className="py-6 sticky top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+          <div className="max-w-7xl mx-auto px-4">
+            <FilterBar />
+          </div>
+        </div>
+        
+        {/* Image Gallery */}
         <div className="max-w-7xl mx-auto px-4 py-8">
           <InfiniteImageGrid />
         </div>
