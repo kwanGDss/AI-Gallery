@@ -16,8 +16,8 @@ export default function Home() {
       </section>
 
       {/* Infinite Scroll Image Gallery */}
-      <section className="py-8 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 py-8">
           <InfiniteImageGrid />
         </div>
       </section>
