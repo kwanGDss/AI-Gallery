@@ -22,7 +22,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-xl font-semibold text-gray-900 tracking-tight">
-              Lummi
+              AI Gallery
             </div>
           </div>
 
