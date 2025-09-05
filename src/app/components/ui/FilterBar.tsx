@@ -17,7 +17,7 @@ export function FilterBar() {
   ]
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-16 z-40">
+    <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Top Row - Search and Controls */}
         <div className="flex flex-col lg:flex-row gap-4 mb-4">

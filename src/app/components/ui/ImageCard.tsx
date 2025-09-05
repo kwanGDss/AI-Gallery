@@ -51,7 +51,7 @@ export function ImageCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-lg bg-gray-100">
+      <div className="relative overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
         {/* Image */}
         <div className="relative">
           <Image
@@ -127,7 +127,7 @@ export function ImageCard({
             <div className={`absolute bottom-3 right-3 transition-opacity duration-200 ${
               isHovered ? 'opacity-100' : 'opacity-0'
             }`}>
-              <Badge variant="secondary" className="bg-white/80 text-gray-700 text-xs">
+              <Badge variant="secondary" className="bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 text-xs">
                 {width} × {height}
               </Badge>
             </div>
@@ -135,27 +135,27 @@ export function ImageCard({
         </div>
 
         {/* Metadata */}
-        <div className="p-4 bg-white">
+        <div className="p-4 bg-white dark:bg-gray-800">
           {/* Tags */}
           <div className="flex flex-wrap gap-1 mb-3">
             {tags.slice(0, 3).map((tag) => (
               <Badge 
                 key={tag} 
                 variant="outline" 
-                className="text-xs text-gray-600 border-gray-200 hover:bg-gray-50 cursor-pointer"
+                className="text-xs text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
               >
                 {tag}
               </Badge>
             ))}
             {tags.length > 3 && (
-              <Badge variant="outline" className="text-xs text-gray-500">
+              <Badge variant="outline" className="text-xs text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-600">
                 +{tags.length - 3}
               </Badge>
             )}
           </div>
 
           {/* Title */}
-          <h3 className="font-medium text-gray-900 text-sm mb-2 line-clamp-1">
+          <h3 className="font-medium text-gray-900 dark:text-white text-sm mb-2 line-clamp-1">
             {title}
           </h3>
 
@@ -166,18 +166,18 @@ export function ImageCard({
                 <div className="flex items-center space-x-2 cursor-pointer">
                   <Avatar className="w-6 h-6">
                     <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${author}`} />
-                    <AvatarFallback className="text-xs bg-orange-100 text-orange-700">
+                    <AvatarFallback className="text-xs bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300">
                       {author.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="text-sm text-gray-700 font-medium">{author}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{author}</span>
                 </div>
               </HoverCardTrigger>
               <HoverCardContent className="w-80" side="bottom">
                 <div className="space-y-2">
-                  <h4 className="font-semibold">{author}</h4>
-                  <p className="text-sm text-gray-600">AI Artist & Creator</p>
-                  <div className="flex space-x-4 text-sm text-gray-500">
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{author}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">AI Artist & Creator</p>
+                  <div className="flex space-x-4 text-sm text-gray-500 dark:text-gray-400">
                     <span>{downloads.toLocaleString()} downloads</span>
                     <span>{likes} likes</span>
                   </div>

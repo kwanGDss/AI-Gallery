@@ -52,7 +52,7 @@ export function InfiniteImageGrid({
     return (
       <div className="text-center py-16">
         <div className="text-red-500 mb-4">이미지를 불러오는 중 오류가 발생했습니다.</div>
-        <div className="text-sm text-gray-500 mb-6">{error}</div>
+        <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">{error}</div>
         <Button 
           onClick={refresh}
           variant="outline"
@@ -69,7 +69,7 @@ export function InfiniteImageGrid({
     return (
       <div className="flex justify-center items-center py-16">
         <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
-        <span className="ml-2 text-gray-600">이미지를 불러오는 중...</span>
+        <span className="ml-2 text-gray-600 dark:text-gray-300">이미지를 불러오는 중...</span>
       </div>
     )
   }
@@ -77,7 +77,7 @@ export function InfiniteImageGrid({
   if (images.length === 0 && !loading) {
     return (
       <div className="text-center py-16">
-        <div className="text-gray-500 mb-4">표시할 이미지가 없습니다.</div>
+        <div className="text-gray-500 dark:text-gray-400 mb-4">표시할 이미지가 없습니다.</div>
         <Button 
           onClick={refresh}
           variant="outline"
@@ -106,12 +106,12 @@ export function InfiniteImageGrid({
         {loading && (
           <div className="flex justify-center items-center space-x-2">
             <Loader2 className="h-6 w-6 animate-spin text-orange-500" />
-            <span className="text-gray-600">더 많은 이미지를 불러오는 중...</span>
+            <span className="text-gray-600 dark:text-gray-300">더 많은 이미지를 불러오는 중...</span>
           </div>
         )}
         
         {!hasMore && images.length > 0 && (
-          <div className="text-gray-500">
+          <div className="text-gray-500 dark:text-gray-400">
             모든 이미지를 불러왔습니다 ({images.length.toLocaleString()}개)
           </div>
         )}
