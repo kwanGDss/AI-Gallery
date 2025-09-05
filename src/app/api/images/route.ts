@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// Required for static export
+export const dynamic = 'force-static'
+export const revalidate = false
+
 interface ImageData {
   id: string
   src: string
@@ -156,8 +160,7 @@ export async function GET(request: NextRequest) {
     const images = EXTENDED_SAMPLE_IMAGES.slice(startIndex, endIndex)
     const hasMore = endIndex < totalImages
     
-    // Simulate network delay for realistic experience
-    await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 200))
+    // Note: Network delay simulation removed for static export compatibility
     
     return NextResponse.json({
       images,

@@ -1,6 +1,6 @@
 'use client'
 
-import { Download, Heart, Eye, MoreHorizontal, ExternalLink } from 'lucide-react'
+import { Download, Heart, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
@@ -25,7 +25,7 @@ interface ImageCardProps {
 }
 
 export function ImageCard({ 
-  id, 
+  id: _, 
   src, 
   title, 
   author, 
@@ -34,11 +34,13 @@ export function ImageCard({
   model,
   dominantColors,
   likes = 156,
-  views = 2340,
+  views: __ = 2340,
   width = 1920,
   height = 1280,
   prompt = "A beautiful AI-generated artwork"
 }: ImageCardProps) {
+  // Suppress unused parameter warnings
+  void _; void __;
   const [isHovered, setIsHovered] = useState(false)
   const [isLiked, setIsLiked] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)

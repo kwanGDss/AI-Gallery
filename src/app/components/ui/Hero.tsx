@@ -60,7 +60,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
             Free stock photos
             <br />
-            <span className="text-orange-500">you'll actually use</span>
+            <span className="text-orange-500">you&apos;ll actually use</span>
           </h1>
 
           {/* Subtitle */}

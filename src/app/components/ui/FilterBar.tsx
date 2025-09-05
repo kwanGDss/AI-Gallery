@@ -8,16 +8,12 @@ import { useState } from 'react'
 
 export function FilterBar() {
   const [activeCategory, setActiveCategory] = useState('전체')
-  const [activeSort, setActiveSort] = useState('최신순')
+  const [activeSort] = useState('최신순')
   const [viewMode, setViewMode] = useState('grid')
 
   const categories = [
     '전체', '사진', '일러스트', '3D', '음악', '영상', 
     '추상화', '풍경화', '초상화', '디지털 아트'
-  ]
-
-  const sortOptions = [
-    '최신순', '인기순', '다운로드순', '좋아요순'
   ]
 
   return (
