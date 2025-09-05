@@ -45,11 +45,11 @@ export function FilterBar() {
             </div>
 
             {/* View Mode */}
-            <div className="flex border border-gray-200 rounded-lg">
+            <div className="flex border border-gray-200 dark:border-gray-700 rounded-lg">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'ghost'}
                 size="sm"
-                className="rounded-r-none"
+                className="rounded-r-none border-gray-200 dark:border-gray-700"
                 onClick={() => setViewMode('grid')}
               >
                 <Grid3X3 className="h-4 w-4" />
@@ -57,7 +57,7 @@ export function FilterBar() {
               <Button
                 variant={viewMode === 'list' ? 'default' : 'ghost'}
                 size="sm"
-                className="rounded-l-none border-l"
+                className="rounded-l-none border-l border-gray-200 dark:border-gray-700"
                 onClick={() => setViewMode('list')}
               >
                 <List className="h-4 w-4" />
@@ -83,13 +83,13 @@ export function FilterBar() {
 
         {/* Active Filters */}
         {activeCategory !== '전체' && (
-          <div className="flex items-center gap-2 mt-3 pt-3 border-t border-gray-100">
-            <span className="text-sm text-gray-600">활성 필터:</span>
+          <div className="flex items-center gap-2 mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+            <span className="text-sm text-gray-600 dark:text-gray-400">활성 필터:</span>
             <Badge variant="secondary" className="flex items-center gap-1">
               {activeCategory}
               <button
                 onClick={() => setActiveCategory('전체')}
-                className="ml-1 hover:text-gray-800"
+                className="ml-1 hover:text-gray-800 dark:hover:text-gray-200"
               >
                 ×
               </button>

@@ -51,12 +51,12 @@ export function InfiniteImageGrid({
   if (error) {
     return (
       <div className="text-center py-16">
-        <div className="text-red-500 mb-4">이미지를 불러오는 중 오류가 발생했습니다.</div>
+        <div className="text-red-500 dark:text-red-400 mb-4">이미지를 불러오는 중 오류가 발생했습니다.</div>
         <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">{error}</div>
         <Button 
           onClick={refresh}
           variant="outline"
-          className="gap-2"
+          className="gap-2 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
         >
           <RefreshCw className="h-4 w-4" />
           다시 시도
@@ -81,7 +81,7 @@ export function InfiniteImageGrid({
         <Button 
           onClick={refresh}
           variant="outline"
-          className="gap-2"
+          className="gap-2 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
         >
           <RefreshCw className="h-4 w-4" />
           새로고침
@@ -120,7 +120,7 @@ export function InfiniteImageGrid({
           <Button 
             onClick={loadMore}
             variant="outline" 
-            className="gap-2"
+            className="gap-2 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
           >
             더 보기
           </Button>

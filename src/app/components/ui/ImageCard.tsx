@@ -67,7 +67,7 @@ export function ImageCard({
           
           {/* Loading placeholder */}
           {!imageLoaded && (
-            <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse" />
           )}
           
           {/* Hover overlay */}
@@ -79,11 +79,11 @@ export function ImageCard({
               isHovered ? 'opacity-100' : 'opacity-0'
             }`}>
               <div className="flex space-x-2">
-                <Button size="sm" className="bg-white/90 hover:bg-white text-black font-medium shadow-sm">
+                <Button size="sm" className="bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 text-black dark:text-white font-medium shadow-sm">
                   <Download className="h-4 w-4 mr-1" />
                   Free Download
                 </Button>
-                <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white shadow-sm">
+                <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-sm">
                   <ExternalLink className="h-4 w-4" />
                 </Button>
               </div>
@@ -96,14 +96,14 @@ export function ImageCard({
               <Button
                 size="sm"
                 variant="ghost"
-                className="w-9 h-9 p-0 bg-white/80 hover:bg-white shadow-sm"
+                className="w-9 h-9 p-0 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 shadow-sm"
                 onClick={(e) => {
                   e.stopPropagation()
                   setIsLiked(!isLiked)
                 }}
               >
                 <Heart 
-                  className={`h-4 w-4 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-700'}`} 
+                  className={`h-4 w-4 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-700 dark:text-gray-300'}`} 
                 />
               </Button>
             </div>
@@ -127,7 +127,7 @@ export function ImageCard({
             <div className={`absolute bottom-3 right-3 transition-opacity duration-200 ${
               isHovered ? 'opacity-100' : 'opacity-0'
             }`}>
-              <Badge variant="secondary" className="bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 text-xs">
+              <Badge variant="secondary" className="bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 text-xs border-0">
                 {width} × {height}
               </Badge>
             </div>
@@ -205,10 +205,10 @@ export function ImageCard({
 
           {/* AI Model badge */}
           <div className="mt-3 flex items-center justify-between">
-            <Badge variant="secondary" className="text-xs bg-orange-50 text-orange-700 border-orange-200">
+            <Badge variant="secondary" className="text-xs bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800">
               {model}
             </Badge>
-            <span className="text-xs text-gray-400">AI Generated</span>
+            <span className="text-xs text-gray-400 dark:text-gray-500">AI Generated</span>
           </div>
         </div>
       </div>
