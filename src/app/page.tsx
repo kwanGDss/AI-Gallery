@@ -4,24 +4,21 @@ import { InfiniteImageGrid } from './components/ui/InfiniteImageGrid'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <Hero />
       
-      {/* Filter Bar + Image Gallery */}
-      <section className="bg-white dark:bg-gray-900">
-        {/* Filter Bar - Sticky */}
-        <div className="py-6 sticky top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-4">
-            <FilterBar />
-          </div>
+      {/* Filter Bar - Sticky */}
+      <div className="py-6 sticky top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <FilterBar />
         </div>
-        
-        {/* Image Gallery */}
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <InfiniteImageGrid />
-        </div>
-      </section>
+      </div>
+      
+      {/* Image Gallery */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <InfiniteImageGrid />
+      </div>
     </div>
   )
 }
