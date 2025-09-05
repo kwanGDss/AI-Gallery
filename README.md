@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Gallery - AI 작품 갤러리 플랫폼
 
-## Getting Started
+AI로 생성된 다양한 작품들을 업로드하고 공유할 수 있는 갤러리 플랫폼입니다.
 
-First, run the development server:
+## 🎯 프로젝트 개요
+
+사용자들이 AI 도구로 제작한 이미지, 음악, 영상 등의 작품을 업로드하고, 다른 사용자들과 공유하며, 다운로드할 수 있는 커뮤니티 중심의 갤러리 사이트입니다.
+
+## ✨ 주요 기능 (MVP)
+
+### 🎨 기본 갤러리 기능
+- **작품 업로드/다운로드**: 이미지, 비디오, 오디오 등 다양한 AI 생성물 지원
+- **카테고리 시스템**: 이미지, 음악, 영상, 텍스트, 3D 아트 등으로 분류
+- **태그 기능**: 스타일, 장르, 사용된 AI 모델별 태그 지원
+- **검색 및 필터링**: 키워드 검색, 카테고리별 필터, 정렬 옵션 (최신순, 인기순, 다운로드순)
+
+### 👤 사용자 시스템
+- **회원가입/로그인**: 이메일 기반 인증 시스템
+- **프로필 관리**: 개인 포트폴리오 페이지
+- **작품 컬렉션**: 개인 갤러리, 즐겨찾기 기능
+- **기본 상호작용**: 좋아요, 댓글 시스템
+
+### 📱 사용자 경험
+- **반응형 디자인**: 모바일, 태블릿, 데스크톱 지원
+- **직관적인 UI**: 쉬운 업로드 프로세스, 깔끔한 갤러리 뷰
+- **빠른 로딩**: 이미지 최적화 및 무한 스크롤
+
+## 🛠️ 기술 스택
+
+### Frontend
+- **Next.js 15**: React 기반 풀스택 프레임워크
+- **React 19**: 최신 React 버전
+- **TypeScript**: 타입 안전성
+- **Tailwind CSS v4**: 유틸리티 기반 스타일링
+- **Turbopack**: 빠른 개발 빌드
+
+### Backend & Database (예정)
+- **Next.js API Routes**: 서버리스 API
+- **Prisma**: ORM
+- **PostgreSQL**: 관계형 데이터베이스
+- **NextAuth.js**: 인증 시스템
+
+### 파일 저장 & 미디어 (예정)
+- **Cloudinary / AWS S3**: 파일 저장 및 최적화
+- **Sharp**: 이미지 처리
+
+## 📦 설치 및 실행
+
+### 개발 환경 설정
 
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+개발 서버가 실행되면 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 빌드 및 배포
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 프로덕션 빌드
+npm run build
 
-## Learn More
+# 프로덕션 서버 실행
+npm start
 
-To learn more about Next.js, take a look at the following resources:
+# 코드 린팅
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 개발 로드맵
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 1: 기본 기능 구현 (현재)
+- [x] 프로젝트 초기 설정
+- [ ] 기본 UI 컴포넌트 개발
+- [ ] 홈페이지 및 갤러리 페이지 구현
+- [ ] 업로드 기능 구현
+- [ ] 회원가입/로그인 시스템
 
-## Deploy on Vercel
+### Phase 2: 핵심 기능 확장
+- [ ] 검색 및 필터링 시스템
+- [ ] 사용자 프로필 시스템
+- [ ] 댓글 및 상호작용 기능
+- [ ] 파일 관리 시스템
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Phase 3: 고급 기능
+- [ ] AI 메타데이터 추출 (프롬프트, 모델 정보 등)
+- [ ] 개인화된 추천 시스템
+- [ ] 소셜 기능 (팔로우, 알림 등)
+- [ ] 모바일 최적화
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 프로젝트 구조
+
+```
+src/
+├── app/
+│   ├── (auth)/          # 인증 관련 페이지
+│   ├── gallery/         # 갤러리 페이지
+│   ├── upload/          # 업로드 페이지
+│   ├── profile/         # 프로필 페이지
+│   ├── api/            # API 라우트
+│   └── components/     # 재사용 컴포넌트
+├── lib/
+│   ├── db/             # 데이터베이스 연결
+│   ├── auth/           # 인증 관련 로직
+│   └── utils/          # 유틸리티 함수
+└── types/              # TypeScript 타입 정의
+```
+
+## 🎨 디자인 시스템
+
+- **컬러 팔레트**: 다크/라이트 테마 지원
+- **타이포그래피**: Geist 폰트 사용
+- **컴포넌트**: 재사용 가능한 UI 컴포넌트
+- **반응형**: 모바일 퍼스트 디자인
+
+## 🤝 기여하기
+
+1. 이 저장소를 포크합니다
+2. 새로운 기능 브랜치를 생성합니다 (`git checkout -b feature/amazing-feature`)
+3. 변경사항을 커밋합니다 (`git commit -m 'Add amazing feature'`)
+4. 브랜치에 푸시합니다 (`git push origin feature/amazing-feature`)
+5. Pull Request를 생성합니다
+
+## 📄 라이센스
+
+이 프로젝트는 MIT 라이센스 하에 배포됩니다.
+
+## 📞 연락처
+
+프로젝트에 대한 질문이나 제안사항이 있으시면 이슈를 통해 알려주세요!
